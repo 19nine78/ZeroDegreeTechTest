@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroDegreeTechTest", "ZeroDegreeTechTest\ZeroDegreeTechTest.csproj", "{2FB445CC-55F8-4BE9-8278-86BA1868C481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroDegreeTechTest.Tests", "ZeroDegreeTechTest.Tests\ZeroDegreeTechTest.Tests.csproj", "{C4DCEDBE-DCD7-48B6-AFF0-650132F10830}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FB445CC-55F8-4BE9-8278-86BA1868C481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FB445CC-55F8-4BE9-8278-86BA1868C481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FB445CC-55F8-4BE9-8278-86BA1868C481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FB445CC-55F8-4BE9-8278-86BA1868C481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4DCEDBE-DCD7-48B6-AFF0-650132F10830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4DCEDBE-DCD7-48B6-AFF0-650132F10830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4DCEDBE-DCD7-48B6-AFF0-650132F10830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4DCEDBE-DCD7-48B6-AFF0-650132F10830}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
