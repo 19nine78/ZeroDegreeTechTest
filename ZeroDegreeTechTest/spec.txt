@@ -1,0 +1,2 @@
+﻿ - display the current days message on the screen (default english, default today)
+ - provide dropdowns to change the language and the day
