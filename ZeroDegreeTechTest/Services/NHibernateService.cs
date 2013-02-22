@@ -1,44 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using NHibernate;
 using NHibernate.Cfg;
+using NHibernate.Criterion;
 using ZeroDegreeTechTest.Models;
 
 namespace ZeroDegreeTechTest.Services
 {
     public class NHibernateService : IMessageService
     {
-        public IList<Models.Day> GetDays()
+        private readonly ISession session;
+
+        public NHibernateService()
         {
-            using (ISession session = NHibernateHelper.OpenSession())
-            {
-                return session.CreateCriteria(typeof(Day)).List<Day>();
-            }
+            session = NHibernateHelper.OpenSession();
         }
 
-        public IList<Models.Language> GetLanguages()
+
+        public IList<Day> GetDays()
         {
-            using (ISession session = NHibernateHelper.OpenSession())
-            {
-                return session.CreateCriteria(typeof(Language)).List<Language>();
-            }
+            return session.CreateCriteria(typeof (Day)).List<Day>();
         }
 
-        public Models.MessageOfTheDay GetMessage()
+        public IList<Language> GetLanguages()
         {
-            throw new NotImplementedException();
+            return session.CreateCriteria(typeof (Language)).List<Language>();
         }
 
-        public Models.MessageOfTheDay GetMessage(int dayId, int languageId)
+        public MessageOfTheDay GetMessage()
         {
-            throw new NotImplementedException();
+            return GetMessage(1, 1);
+        }
+
+        public MessageOfTheDay GetMessage(int dayId, int languageId)
+        {
+            return session.CreateCriteria(typeof (MessageOfTheDay))
+                          .Add(Restrictions.Eq("dayId", dayId))
+                          .Add(Restrictions.Eq("languageId", languageId))
+                          .UniqueResult<MessageOfTheDay>();
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            session.Close();
         }
     }
 
@@ -54,7 +57,7 @@ namespace ZeroDegreeTechTest.Services
                 {
                     var configuration = new Configuration();
                     configuration.Configure();
-                    configuration.AddAssembly(typeof(Language).Assembly);
+                    configuration.AddAssembly(typeof (Language).Assembly);
                     _sessionFactory = configuration.BuildSessionFactory();
                 }
 

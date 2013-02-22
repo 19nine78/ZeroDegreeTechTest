@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ZeroDegreeTechTest"
+                   namespace="ZeroDegreeTechTest.Models">
+  <class name="MessageOfTheDay" table="MessagesByLanguageAndDay">
+    <id name="Id">
+      <generator class="assigned"/>
+    </id>
+    <property name="dayId" column="fkDay"/>
+    <property name="day" column="day"/>
+    <property name="languageId" column="fkLanguage"/>
+    <property name="language" column="language"/>
+    <property name="message" column="message"/>
+  </class>
+
+</hibernate-mapping> 

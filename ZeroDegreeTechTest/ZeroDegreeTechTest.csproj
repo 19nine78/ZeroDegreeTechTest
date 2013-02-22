@@ -44,6 +44,9 @@
     <Reference Include="Dapper">
       <HintPath>..\packages\Dapper.1.12.1\lib\net40\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="HibernatingRhinos.Profiler.Appender">
+      <HintPath>..\..\..\..\Desktop\NHibernate.Profiler-v2.0-Build-2138\HibernatingRhinos.Profiler.Appender.dll</HintPath>
+    </Reference>
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
@@ -193,6 +196,7 @@
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <EmbeddedResource Include="Mappings\Day.hbm.xml" />
     <EmbeddedResource Include="Mappings\Language.hbm.xml" />
+    <EmbeddedResource Include="Mappings\MessageOfTheDay.hbm.xml" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

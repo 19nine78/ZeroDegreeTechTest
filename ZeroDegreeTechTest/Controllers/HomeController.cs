@@ -15,6 +15,7 @@ namespace ZeroDegreeTechTest.Controllers
         {
             _messageService = new NHibernateService();
         }
+
         public HomeController(IMessageService messageService)
         {
             _messageService = messageService;
@@ -22,9 +23,12 @@ namespace ZeroDegreeTechTest.Controllers
 
         public ActionResult Index()
         {
-            var days =_messageService.GetDays();
-            var lang = _messageService.GetLanguages();
-
+            using (_messageService)
+            {
+                var days = _messageService.GetDays();
+                var lang = _messageService.GetLanguages();
+                var message = _messageService.GetMessage();
+            }
 
             return View();
         }
